@@ -1,0 +1,37 @@
+{
+    "Lista": [
+        {
+            "Tipo": "Circulo",
+            "Texto": "hola",
+            "Props": "radio= 4;"
+        },
+        {
+            "Tipo": "Rectangulo",
+            "Texto": "hello",
+            "Props": "base1=5; altura=2;"
+        },
+        {
+            "Tipo": "Triangulo",
+            "Texto": "leftmy",
+            "Props": "a=4;v=5;c=6;"
+        },
+        {
+            "Tipo": "Circulo",
+            "Texto": "caporal",
+            "Props": "radio= 2;"
+        },
+        {
+            "Tipo": "Rectangulo",
+            "Texto": "start",
+            "Props": "base1=5; altura=2;"
+        },
+        {
+            "Tipo": "Rectangulo",
+            "Texto": "start",
+            "Props": "base1=10; altura=5;"
+        }
+
+
+
+    ]
+}

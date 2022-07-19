@@ -8,21 +8,34 @@ namespace Libreria
 {
     public abstract class Calculo
     {
-        public String name { get; set; }
+        public String Texto { get; set; }
+        public String Props { get; set; }
 
+        public abstract IFiguras CreateFigura();
 
-        public Calculo(String name)
+        public Boolean VerCapacidad()
         {
-            this.name = name;
+            IFiguras figuras = CreateFigura();
+            if (figuras.Texto.Length > figuras.Capacidad())
+              {
+                return false;
+
+
+               }
+            return true;
         }
 
-        public void CalcularFigura()
-        {
-            Console.WriteLine("Calculo de la figura");
-            IFiguras figuras = CreateFigura(name);
-            figuras.doStuff();
-        }
+        //public Boolean VerCapacidadMaxima()
+        //{
+        //    IFiguras figuras =
+        //}
 
-        public abstract IFiguras CreateFigura(String name);
+        public String Imprimir()
+        {
+            IFiguras figuras = CreateFigura();
+
+            return figuras.Estado();
+        }
+       
     }
 }

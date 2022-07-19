@@ -9,23 +9,15 @@ namespace RetoFiguras
 {
     public class CreateRectángulos : Calculo
     {
-        public CreateRectángulos(string name) : base(name)
+
+        public CreateRectángulos(String Texto, String Props)
         {
-            this.name = name;
+            this.Texto = Texto;
+            this.Props = Props;
         }
-        public override IFiguras CreateFigura(string name)
+        public override IFiguras CreateFigura()
         {
-            Console.WriteLine("crear rectamgulo");
-
-            Rectángulos rectángulos = new Rectángulos("Rectángulo", 3, 4, 10, 7);
-            rectángulos.name = name;
-
-            return rectángulos;
-                
+            return new Rectángulos(Texto, Props);
         }
-
-        
-
-        
     }
 }

@@ -8,29 +8,42 @@ namespace Libreria
 {
     public class Triangulos : IFiguras
     {
-        public String name { get; set; }
-        public int x { get; set; }
-        public int y { get; set; }
-        public int altura { get; set; }
+        public String Texto { get; set; }
+        public float alturaA, alturaV, alturaC;
 
 
-        public Triangulos(String name, int x, int y, int altura)
+        public float Area()
         {
-            this.name = name;
-            this.x = x;
-            this.y = y;
-            this.altura = altura;
+            float a = (alturaA + alturaV + alturaC) / 2.0f;
+            return (float) Math.Sqrt(a*(a-alturaA)* (a - alturaV) * (a - alturaC));
         }
 
-        public void doStuff()
+        public float Capacidad()
         {
-            Console.WriteLine("- Triangulo -");
-            Console.WriteLine("Figura: " + this.name);
-            Console.WriteLine("-- eje x: " + this.x);
-            Console.WriteLine("-- eje y: " + this.y);
-            Console.WriteLine("-- altura: " + this.altura);
-            Console.WriteLine("");
+            return 2.0f / 3.0f * alturaV;
         }
 
+        public string Estado()
+        {
+            return "Alturas del triamgulo a= " + alturaA + ", v= " + alturaV + ", c=" + alturaC + " Texto: " + Texto;
+        }
+
+
+        public Triangulos(String Texto, String Props)
+        {
+            this.Texto = Texto;
+
+
+            List<String> listaProps = Props.Split(';').ToList();
+
+            List<String> listaValA = listaProps[0].Split('=').ToList();
+            List<String> listaValV = listaProps[1].Split('=').ToList();
+            List<String> listaValC = listaProps[2].Split('=').ToList();
+
+
+            this.alturaA = float.Parse(listaValA[1]);
+            this.alturaV = float.Parse(listaValA[1]);
+            this.alturaC = float.Parse(listaValA[1]);
+        }
     }
 }

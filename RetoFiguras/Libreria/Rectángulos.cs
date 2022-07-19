@@ -8,31 +8,39 @@ namespace Libreria
 {
     public class Rectángulos : IFiguras
     {
-        public String name { get; set; }
-        public int base1 { get; set; }
-        public int altura { get; set; }
-        public int x { get; set; }
-        public int y { get; set; }
+        public String Texto { get; set; }
+        public float base1 { get; set; }
+        public float altura { get; set; }
 
 
-        public Rectángulos(String name, int x, int y, int altura, int base1)
+        public float Area()
         {
-            this.name = name;
-            this.base1 = base1;
-            this.altura = altura;
-            this.x = x;
-            this.y = y;
+            return base1 * altura;
         }
 
-        public void doStuff()
+        public float Capacidad()
         {
-            Console.WriteLine("- Rectangulo -");
-            Console.WriteLine("Figura: " + this.name);
-            Console.WriteLine("-- eje x: " + this.x);
-            Console.WriteLine("-- eje y: " + this.y);
-            Console.WriteLine("-- altura: " + this.altura);
-            Console.WriteLine("-- base: " + this.base1);
-            Console.WriteLine("");
+            return 2.0f / 3.0f * base1;
+        }
+
+        public String Estado()
+        {
+            return "estado del rectangulo" + base1 + " * " +altura + " Texto: " + Texto;
+        }
+
+        public Rectángulos(String Texto, String Props)
+        {
+            this.Texto = Texto;
+
+
+            List<String> listaProps = Props.Split(';').ToList();
+
+            List<String> listaValA = listaProps[0].Split('=').ToList();
+            List<String> listaValV = listaProps[1].Split('=').ToList();
+
+
+            this.base1 = float.Parse(listaValA[1]);
+            this.altura = float.Parse(listaValA[1]);
         }
     }
 }

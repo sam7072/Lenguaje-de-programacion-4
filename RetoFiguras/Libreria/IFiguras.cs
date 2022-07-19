@@ -8,6 +8,10 @@ namespace Libreria
 {
     public interface IFiguras
     {
-        public void doStuff();
+        public String Texto { get; set; }
+
+        public float Area();
+        public float Capacidad();
+        public String Estado();
     }
 }

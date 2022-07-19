@@ -9,22 +9,15 @@ namespace RetoFiguras
 {
     public class CreateCirculos : Calculo
     {
-        public CreateCirculos(string name) : base(name)
+        public CreateCirculos (String Texto, String Props)
         {
-            this.name = name;
+            this.Texto = Texto;
+            this.Props = Props;
         }
 
-        public override IFiguras CreateFigura(string name)
+        public override IFiguras CreateFigura()
         {
-            Console.WriteLine("crear circulo");
-
-            Circulos circulos = new Circulos("ciculo", 3, 3, 5);
-            circulos.name = name;
-
-            return circulos;
-
+            return new Circulos(Texto, Props);
         }
-
-        
     }
 }

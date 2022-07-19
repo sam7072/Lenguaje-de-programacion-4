@@ -9,19 +9,14 @@ namespace RetoFiguras
 {
     public class CreateTriángulos : Calculo
     {
-        public CreateTriángulos(string name) : base(name)
+        public CreateTriángulos(String Texto, String Props)
         {
-            this.name = name;
+            this.Texto = Texto;
+            this.Props = Props;
         }
-
-        public override IFiguras CreateFigura(string name)
+        public override IFiguras CreateFigura()
         {
-            Console.WriteLine("Crear Triangulo");
-
-            Triangulos triangulos = new Triangulos("triangulo", 4, 5, 6);
-            triangulos.name = name;
-
-            return triangulos;
+            return new Triangulos(Texto, Props);
         }
     }
 }

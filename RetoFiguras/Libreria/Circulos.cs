@@ -1,35 +1,41 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Libreria
 {
     public class Circulos :IFiguras
     {
-        public String name { get; set; }
-        public int x { get; set; }
-        public int y { get; set; }
-        public int radio { get; set; }
+        public String Texto { get; set; }
+        public float radio { get; set; }
 
-        public void Validar()
+        public float Area()
         {
-            Console.WriteLine("- validar a ");
+            return (float) Math.PI * radio * radio;
         }
 
-        public Circulos (String name, int x,int y, int radio)
+        public float Capacidad()
         {
-            this.name = name;
-            this.x = x;
-            this.y = y;
-            this.radio = radio;
+            return 2.0f / 3.0f * 2 * radio; 
         }
 
-        public void doStuff()
+        public String Estado()
         {
-            Console.WriteLine("- Circulos -");
-            Console.WriteLine("Figura: " + this.name);
-            Console.WriteLine("-- eje x: " + this.x);
-            Console.WriteLine("-- eje y: " + this.y);
-            Console.WriteLine("-- radio: " + this.radio);
-            Console.WriteLine("");
+            return "El Radio es : " + radio+ " Texto: "+ Texto; 
+        }
+
+
+        public Circulos(String Texto, String Props)
+        {
+            this.Texto = Texto;
+
+
+            List<String> listaProps = Props.Split(';').ToList();
+
+            List<String> listaValA = listaProps[0].Split('=').ToList();
+
+
+            this.radio = float.Parse(listaValA[1]);
         }
     }
 }
