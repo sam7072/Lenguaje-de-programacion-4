@@ -26,9 +26,9 @@
             "Props": "base1=5; altura=2;"
         },
         {
-            "Tipo": "Rectangulo",
-            "Texto": "start",
-            "Props": "base1=10; altura=5;"
+            "Tipo": "Pentagono",
+            "Texto": "Alerta",
+            "Props": "lado=7"
         }
 
 

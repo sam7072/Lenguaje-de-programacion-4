@@ -26,6 +26,10 @@ namespace RetoFiguras
                     case "Rectangulo":
                         listaCalculo.Add(new CreateRectángulos(regs.Texto, regs.Props));
                         break;
+                    case "Pentagono":
+                        listaCalculo.Add(new CreateRectángulos(regs.Texto, regs.Props));
+                        break;
+
                 }
             }
 
@@ -37,6 +41,11 @@ namespace RetoFiguras
 
 
             }
+
+            Calculo calculo = listaCalculo[0];
+
+            Console.WriteLine("Resultado de verificar areas: ");
+            Console.WriteLine(" - " +calculo.VerificarAreas(40.0f, listaCalculo));
         }
     }
 }
